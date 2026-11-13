@@ -1,0 +1,899 @@
+{
+  "format": "locale-crash/report/1",
+  "label": "Synthetic example: one correct answer and one locale mistake",
+  "total": 72,
+  "passed": 1,
+  "failed": 1,
+  "missing": 70,
+  "pairFailures": 1,
+  "results": [
+    {
+      "caseId": "numbers-01-en",
+      "pair": "numbers-01",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "passed",
+      "expected": {
+        "amount": 1234.5
+      },
+      "actual": {
+        "amount": 1234.5
+      },
+      "differences": []
+    },
+    {
+      "caseId": "numbers-01-tr",
+      "pair": "numbers-01",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "failed",
+      "expected": {
+        "amount": 1234.5
+      },
+      "actual": {
+        "amount": 1.234
+      },
+      "differences": [
+        "amount: expected 1234.5, received 1.234."
+      ]
+    },
+    {
+      "caseId": "numbers-02-en",
+      "pair": "numbers-02",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 12.5
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-02-tr",
+      "pair": "numbers-02",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 12.5
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-03-en",
+      "pair": "numbers-03",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 1000
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-03-tr",
+      "pair": "numbers-03",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 1000
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-04-en",
+      "pair": "numbers-04",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 0.75
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-04-tr",
+      "pair": "numbers-04",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 0.75
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-05-en",
+      "pair": "numbers-05",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": -2450.25
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-05-tr",
+      "pair": "numbers-05",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": -2450.25
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-06-en",
+      "pair": "numbers-06",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 1000000
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-06-tr",
+      "pair": "numbers-06",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 1000000
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-07-en",
+      "pair": "numbers-07",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 99.95
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-07-tr",
+      "pair": "numbers-07",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 99.95
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-08-en",
+      "pair": "numbers-08",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 0
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-08-tr",
+      "pair": "numbers-08",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 0
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-09-en",
+      "pair": "numbers-09",
+      "category": "numbers",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "amount": 42015.08
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "numbers-09-tr",
+      "pair": "numbers-09",
+      "category": "numbers",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "amount": 42015.08
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-01-en",
+      "pair": "dates-01",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-04-05"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-01-tr",
+      "pair": "dates-01",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-04-05"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-02-en",
+      "pair": "dates-02",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-05-04"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-02-tr",
+      "pair": "dates-02",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-05-04"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-03-en",
+      "pair": "dates-03",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-12-11"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-03-tr",
+      "pair": "dates-03",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-12-11"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-04-en",
+      "pair": "dates-04",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2027-01-02"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-04-tr",
+      "pair": "dates-04",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2027-01-02"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-05-en",
+      "pair": "dates-05",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2028-02-29"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-05-tr",
+      "pair": "dates-05",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2028-02-29"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-06-en",
+      "pair": "dates-06",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-12-31"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-06-tr",
+      "pair": "dates-06",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-12-31"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-07-en",
+      "pair": "dates-07",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-07-09"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-07-tr",
+      "pair": "dates-07",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-07-09"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-08-en",
+      "pair": "dates-08",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-11-03"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-08-tr",
+      "pair": "dates-08",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2026-11-03"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-09-en",
+      "pair": "dates-09",
+      "category": "dates",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2030-10-30"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "dates-09-tr",
+      "pair": "dates-09",
+      "category": "dates",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "isoDate": "2030-10-30"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-01-en",
+      "pair": "casing-01",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "ISTANBUL"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-01-tr",
+      "pair": "casing-01",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "İSTANBUL"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-02-en",
+      "pair": "casing-02",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "IZMIR"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-02-tr",
+      "pair": "casing-02",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "İZMİR"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-03-en",
+      "pair": "casing-03",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "i"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-03-tr",
+      "pair": "casing-03",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "ı"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-04-en",
+      "pair": "casing-04",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "istanbul"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-04-tr",
+      "pair": "casing-04",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "ıstanbul"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-05-en",
+      "pair": "casing-05",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "iğdir"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-05-tr",
+      "pair": "casing-05",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "ığdır"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-06-en",
+      "pair": "casing-06",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "INCI"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-06-tr",
+      "pair": "casing-06",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "İNCİ"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-07-en",
+      "pair": "casing-07",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "IŞIK"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-07-tr",
+      "pair": "casing-07",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "IŞIK"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-08-en",
+      "pair": "casing-08",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "KIVI"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-08-tr",
+      "pair": "casing-08",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "KİVİ"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-09-en",
+      "pair": "casing-09",
+      "category": "casing",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "text": "kirik"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "casing-09-tr",
+      "pair": "casing-09",
+      "category": "casing",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "text": "kırık"
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-01-en",
+      "pair": "negation-01",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "send",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-01-tr",
+      "pair": "negation-01",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "send",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-02-en",
+      "pair": "negation-02",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "send",
+        "allowed": true
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-02-tr",
+      "pair": "negation-02",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "send",
+        "allowed": true
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-03-en",
+      "pair": "negation-03",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "delete",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-03-tr",
+      "pair": "negation-03",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "delete",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-04-en",
+      "pair": "negation-04",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "delete",
+        "allowed": true
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-04-tr",
+      "pair": "negation-04",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "delete",
+        "allowed": true
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-05-en",
+      "pair": "negation-05",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "publish",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-05-tr",
+      "pair": "negation-05",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "publish",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-06-en",
+      "pair": "negation-06",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "share",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-06-tr",
+      "pair": "negation-06",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "share",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-07-en",
+      "pair": "negation-07",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "upload",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-07-tr",
+      "pair": "negation-07",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "upload",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-08-en",
+      "pair": "negation-08",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "cancel",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-08-tr",
+      "pair": "negation-08",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "cancel",
+        "allowed": false
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-09-en",
+      "pair": "negation-09",
+      "category": "negation",
+      "locale": "en-US",
+      "status": "missing",
+      "expected": {
+        "action": "invite",
+        "allowed": true
+      },
+      "actual": null,
+      "differences": []
+    },
+    {
+      "caseId": "negation-09-tr",
+      "pair": "negation-09",
+      "category": "negation",
+      "locale": "tr-TR",
+      "status": "missing",
+      "expected": {
+        "action": "invite",
+        "allowed": true
+      },
+      "actual": null,
+      "differences": []
+    }
+  ]
+}

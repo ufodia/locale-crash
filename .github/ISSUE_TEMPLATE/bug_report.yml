@@ -1,0 +1,15 @@
+name: Bug report
+description: Report a fixture, parser, scoring, or interface problem.
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction
+      description: Include the case ID, locale, expected vs actual result, and browser or Node version. Use synthetic data.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Minimal evidence
+      description: Include a small response object or screenshot without private data.

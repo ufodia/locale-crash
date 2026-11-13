@@ -1,0 +1,26 @@
+{
+  "name": "locale-crash",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Paired locale regression cases for structured AI outputs.",
+  "license": "MIT",
+  "author": "Ufodia",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "score": "tsx cli/score.ts",
+    "fixtures": "tsx cli/fixtures.ts",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2",
+    "vite": "8.3.8",
+    "vitest": "5.1.0"
+  }
+}

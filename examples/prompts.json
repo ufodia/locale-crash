@@ -1,0 +1,743 @@
+{
+  "format": "locale-crash/prompts/1",
+  "cases": [
+    {
+      "caseId": "numbers-01-en",
+      "pair": "numbers-01",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"1,234.50\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-01-tr",
+      "pair": "numbers-01",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"1.234,50\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-02-en",
+      "pair": "numbers-02",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"12.50\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-02-tr",
+      "pair": "numbers-02",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"12,50\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-03-en",
+      "pair": "numbers-03",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"1,000\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-03-tr",
+      "pair": "numbers-03",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"1.000\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-04-en",
+      "pair": "numbers-04",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"0.75\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-04-tr",
+      "pair": "numbers-04",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"0,75\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-05-en",
+      "pair": "numbers-05",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"-2,450.25\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-05-tr",
+      "pair": "numbers-05",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"-2.450,25\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-06-en",
+      "pair": "numbers-06",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"1,000,000.00\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-06-tr",
+      "pair": "numbers-06",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"1.000.000,00\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-07-en",
+      "pair": "numbers-07",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"99.95\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-07-tr",
+      "pair": "numbers-07",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"99,95\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-08-en",
+      "pair": "numbers-08",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"0.00\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-08-tr",
+      "pair": "numbers-08",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"0,00\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-09-en",
+      "pair": "numbers-09",
+      "locale": "en-US",
+      "category": "numbers",
+      "prompt": "Locale: en-US. Extract the amount from \"42,015.08\". Return only JSON with a numeric amount field.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "numbers-09-tr",
+      "pair": "numbers-09",
+      "locale": "tr-TR",
+      "category": "numbers",
+      "prompt": "Yerel biçim: tr-TR. \"42.015,08\" tutarını çıkar. Yalnızca sayısal amount alanı içeren JSON döndür.",
+      "outputFields": {
+        "amount": "number"
+      }
+    },
+    {
+      "caseId": "dates-01-en",
+      "pair": "dates-01",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"04/05/2026\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-01-tr",
+      "pair": "dates-01",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"05.04.2026\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-02-en",
+      "pair": "dates-02",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"05/04/2026\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-02-tr",
+      "pair": "dates-02",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"04.05.2026\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-03-en",
+      "pair": "dates-03",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"12/11/2026\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-03-tr",
+      "pair": "dates-03",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"11.12.2026\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-04-en",
+      "pair": "dates-04",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"01/02/2027\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-04-tr",
+      "pair": "dates-04",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"02.01.2027\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-05-en",
+      "pair": "dates-05",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"02/29/2028\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-05-tr",
+      "pair": "dates-05",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"29.02.2028\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-06-en",
+      "pair": "dates-06",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"12/31/2026\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-06-tr",
+      "pair": "dates-06",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"31.12.2026\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-07-en",
+      "pair": "dates-07",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"07/09/2026\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-07-tr",
+      "pair": "dates-07",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"09.07.2026\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-08-en",
+      "pair": "dates-08",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"11/03/2026\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-08-tr",
+      "pair": "dates-08",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"03.11.2026\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-09-en",
+      "pair": "dates-09",
+      "locale": "en-US",
+      "category": "dates",
+      "prompt": "Locale: en-US (MM/DD/YYYY). Convert \"10/30/2030\" to a calendar date. Return only JSON with isoDate in YYYY-MM-DD format. Do not add a time zone.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "dates-09-tr",
+      "pair": "dates-09",
+      "locale": "tr-TR",
+      "category": "dates",
+      "prompt": "Yerel biçim: tr-TR (GG.AA.YYYY). \"30.10.2030\" takvim tarihini dönüştür. Yalnızca YYYY-MM-DD biçiminde isoDate alanı içeren JSON döndür. Saat dilimi ekleme.",
+      "outputFields": {
+        "isoDate": "string"
+      }
+    },
+    {
+      "caseId": "casing-01-en",
+      "pair": "casing-01",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"istanbul\" to uppercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-01-tr",
+      "pair": "casing-01",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"istanbul\" metnini büyük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-02-en",
+      "pair": "casing-02",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"izmir\" to uppercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-02-tr",
+      "pair": "casing-02",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"izmir\" metnini büyük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-03-en",
+      "pair": "casing-03",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"I\" to lowercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-03-tr",
+      "pair": "casing-03",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"I\" metnini küçük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-04-en",
+      "pair": "casing-04",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"ISTANBUL\" to lowercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-04-tr",
+      "pair": "casing-04",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"ISTANBUL\" metnini küçük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-05-en",
+      "pair": "casing-05",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"IĞDIR\" to lowercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-05-tr",
+      "pair": "casing-05",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"IĞDIR\" metnini küçük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-06-en",
+      "pair": "casing-06",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"inci\" to uppercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-06-tr",
+      "pair": "casing-06",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"inci\" metnini büyük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-07-en",
+      "pair": "casing-07",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"ışık\" to uppercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-07-tr",
+      "pair": "casing-07",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"ışık\" metnini büyük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-08-en",
+      "pair": "casing-08",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"kivi\" to uppercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-08-tr",
+      "pair": "casing-08",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"kivi\" metnini büyük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-09-en",
+      "pair": "casing-09",
+      "locale": "en-US",
+      "category": "casing",
+      "prompt": "Locale: en-US. Convert \"KIRIK\" to lowercase exactly as written. Return only JSON with a text field.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "casing-09-tr",
+      "pair": "casing-09",
+      "locale": "tr-TR",
+      "category": "casing",
+      "prompt": "Yerel biçim: tr-TR. \"KIRIK\" metnini küçük harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.",
+      "outputFields": {
+        "text": "string"
+      }
+    },
+    {
+      "caseId": "negation-01-en",
+      "pair": "negation-01",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Do not send the invoice.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-01-tr",
+      "pair": "negation-01",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Faturayı gönderme.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-02-en",
+      "pair": "negation-02",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Send the invoice.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-02-tr",
+      "pair": "negation-02",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Faturayı gönder.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-03-en",
+      "pair": "negation-03",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Do not delete the file.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-03-tr",
+      "pair": "negation-03",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Dosyayı silme.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-04-en",
+      "pair": "negation-04",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Delete the file.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-04-tr",
+      "pair": "negation-04",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Dosyayı sil.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-05-en",
+      "pair": "negation-05",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Do not publish the report.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-05-tr",
+      "pair": "negation-05",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Raporu yayımlama.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-06-en",
+      "pair": "negation-06",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Do not share the link.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-06-tr",
+      "pair": "negation-06",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Bağlantıyı paylaşma.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-07-en",
+      "pair": "negation-07",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Do not upload the photo.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-07-tr",
+      "pair": "negation-07",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Fotoğrafı yükleme.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-08-en",
+      "pair": "negation-08",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Do not cancel the booking.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-08-tr",
+      "pair": "negation-08",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Rezervasyonu iptal etme.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-09-en",
+      "pair": "negation-09",
+      "locale": "en-US",
+      "category": "negation",
+      "prompt": "Interpret this explicit command: \"Invite the guest.\". Return only JSON with action (English verb) and allowed (boolean).",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    },
+    {
+      "caseId": "negation-09-tr",
+      "pair": "negation-09",
+      "locale": "tr-TR",
+      "category": "negation",
+      "prompt": "Bu açık komutu yorumla: \"Konuğu davet et.\". Yalnızca action (İngilizce fiil) ve allowed (mantıksal değer) alanlarını içeren JSON döndür.",
+      "outputFields": {
+        "action": "string",
+        "allowed": "boolean"
+      }
+    }
+  ]
+}

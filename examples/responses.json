@@ -1,0 +1,8 @@
+{
+  "format": "locale-crash/responses/1",
+  "label": "Synthetic example: one correct answer and one locale mistake",
+  "responses": [
+    { "caseId": "numbers-01-en", "output": { "amount": 1234.5 } },
+    { "caseId": "numbers-01-tr", "output": { "amount": 1.234 } }
+  ]
+}
