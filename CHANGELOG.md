@@ -1,5 +1,13 @@
 # Changelog
 
+## Reliability fixes — 2026-11-13
+
+- Reject overflow numbers and excessive JSON nesting before scoring or exporting responses.
+- Bound custom expected values and discard unchecked response metadata.
+- Protect exported CSV cells from spreadsheet formula interpretation.
+- Prevent old file reads from replacing newer parser runs or manual work.
+- Add focused input-boundary and browser recovery regressions.
+
 ## 1.0.0 — 2026-11-13
 
 - Add 36 paired English/Turkish fixtures across numbers, dates, casing, and negative commands.

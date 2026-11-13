@@ -17,4 +17,25 @@ describe('external scoring',()=>{
   it('rejects duplicate and unknown case IDs',()=>{const entry={caseId:cases[0].id,output:cases[0].expected};expect(()=>parseResponses(JSON.stringify({format:'locale-crash/responses/1',label:'X',responses:[entry,entry]}))).toThrow();expect(()=>parseResponses('{"format":"locale-crash/responses/1","label":"X","responses":[{"caseId":"unknown","output":{}}]}')).toThrow();});
   it('exports valid quoted CSV',()=>{const report=score({format:'locale-crash/responses/1',label:'X',responses:[]},[cases[0]]);const out=csv(report);expect(out).toContain('"caseId"');expect(out).toContain('"missing"');expect(out).toContain('""amount""');});
   it('validates custom cases without giving away expected values in the prompt',()=>{const c=validateCustom({category:'numbers',locale:'tr-TR',input:'5,25',expected:'{"amount":5.25}',operation:'upper'},'custom-1');expect(c.prompt).not.toContain('5.25');expect(reference(c)).toEqual({amount:5.25});expect(()=>validateCustom({category:'bad',locale:'tr-TR',input:'x',expected:'{}',operation:'upper'},'x')).toThrow();});
+  it('rejects overflow numeric literals in expectations and imported answers',()=>{
+    expect(()=>validateCustom({category:'numbers',locale:'en-US',input:'1',expected:'{"amount":1e400}',operation:'upper'},'custom-1')).toThrow('finite');
+    expect(()=>parseResponses(`{"format":"locale-crash/responses/1","label":"Overflow","responses":[{"caseId":"${cases[0].id}","output":{"amount":1e400}}]}`)).toThrow('finite');
+  });
+  it('rejects excessively nested output before recursive comparison or report export',()=>{
+    const nested='['.repeat(20000)+'0'+']'.repeat(20000);
+    expect(()=>parseResponses(`{"format":"locale-crash/responses/1","label":"Deep","responses":[{"caseId":"${cases[0].id}","output":{"amount":${nested}}}]}`)).toThrow('nesting');
+    const output=JSON.parse(nested);
+    expect(()=>score({format:'locale-crash/responses/1',label:'Manual',responses:[{caseId:cases[0].id,output}]})).toThrow('nesting');
+  });
+  it('keeps ordinary incorrect JSON scoreable and removes unchecked response metadata',()=>{
+    const text=JSON.stringify({format:'locale-crash/responses/1',label:'Review',extra:{ignored:true},responses:[{caseId:cases[0].id,output:{amount:[1,2]},extension:{ignored:true}}]});
+    const parsed=parseResponses(text);
+    expect(parsed).not.toHaveProperty('extra');expect(parsed.responses[0]).not.toHaveProperty('extension');
+    expect(score(parsed).failed).toBe(1);
+  });
+  it('protects CSV cells that could be interpreted as spreadsheet formulas',()=>{
+    const report=score({format:'locale-crash/responses/1',label:'Review',responses:[]},[cases[0]]);
+    report.results[0].differences=['=1+1'];
+    expect(csv(report)).toContain('"\'=1+1"');
+  });
 });

@@ -25,3 +25,27 @@ test('local workbench: analysis, evidence, export and responsive layout',async({
   expect(await page.evaluate(()=>document.documentElement.scrollWidth>window.innerWidth+1)).toBe(false);
   expect(errors).toEqual([]);
 });
+
+test('a delayed import cannot replace a newer reference run and unsafe JSON is recoverable',async({page})=>{
+  const errors=[];page.on('pageerror',error=>errors.push(error.message));
+  await page.addInitScript(()=>{
+    const original=File.prototype.text;
+    File.prototype.text=async function(){
+      if(this.name==='delayed.json')await new Promise(resolve=>{window.releaseImport=resolve;});
+      const text=await original.call(this);window.importReadFinished=true;return text;
+    };
+  });
+  await page.goto('/');
+  const response={format:'locale-crash/responses/1',label:'Old import',responses:[]};
+  await page.locator('#response-file').setInputFiles({name:'delayed.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(response))});
+  await expect.poll(()=>page.evaluate(()=>typeof window.releaseImport)).toBe('function');
+  await page.locator('#reference').click();
+  await page.evaluate(()=>window.releaseImport());
+  await expect.poll(()=>page.evaluate(()=>window.importReadFinished)).toBe(true);
+  await expect(page.locator('#passed')).toHaveText('72');
+  await expect(page.locator('#run-kind')).toHaveText('LOCAL DEMONSTRATION');
+  await page.locator('#response-file').setInputFiles({name:'overflow.json',mimeType:'application/json',buffer:Buffer.from('{"format":"locale-crash/responses/1","label":"Overflow","responses":[{"caseId":"numbers-01-en","output":{"amount":1e400}}]}')});
+  await expect(page.locator('#error')).toContainText('finite');
+  await expect(page.locator('#passed')).toHaveText('72');
+  expect(errors).toEqual([]);
+});

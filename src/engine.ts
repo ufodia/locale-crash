@@ -50,7 +50,22 @@ function canonical(value:unknown):string{
   if(value&&typeof value==='object')return`{${Object.keys(value).sort().map(key=>`${JSON.stringify(key)}:${canonical((value as Record<string,unknown>)[key])}`).join(',')}}`;
   return JSON.stringify(value)??'undefined';
 }
+/** Bound JSON supplied by files or the manual editor before comparison and export. */
+function validateOutput(value:unknown):void{
+  const pending:{value:unknown;depth:number}[]=[{value,depth:0}];let count=0;
+  while(pending.length){
+    const current=pending.pop()!;
+    if(++count>20000||current.depth>32)throw new Error('Response output exceeds 20,000 JSON values or 32 nesting levels.');
+    const item=current.value;
+    if(item===null||typeof item==='string'||typeof item==='boolean')continue;
+    if(typeof item==='number'){if(!Number.isFinite(item))throw new Error('JSON numbers must be finite.');continue;}
+    if(typeof item!=='object')throw new Error('Response output must contain only JSON values.');
+    const values=Array.isArray(item)?item:Object.values(item);
+    for(const child of values)pending.push({value:child,depth:current.depth+1});
+  }
+}
 export function score(input:Responses,fixtures:Case[]=cases):Report{
+  for(const response of input.responses)validateOutput(response.output);
   const answers=new Map(input.responses.map(r=>[r.caseId,r.output]));
   const results:Result[]=fixtures.map(f=>{
     const present=answers.has(f.id),actual=answers.get(f.id),differences:string[]=[];
@@ -72,18 +87,20 @@ export function parseResponses(text:string,fixtures:Case[]=cases):Responses{
   const r=data as Record<string,unknown>;
   if(r.format!=='locale-crash/responses/1'||typeof r.label!=='string'||r.label.length<1||r.label.length>200||!Array.isArray(r.responses)||r.responses.length>10000)throw new Error('Invalid response format, label, or response count.');
   const known=new Set(fixtures.map(f=>f.id)),seen=new Set<string>();
-  for(const entry of r.responses){if(!entry||typeof entry!=='object'||typeof entry.caseId!=='string'||!known.has(entry.caseId)||seen.has(entry.caseId)||!Object.prototype.hasOwnProperty.call(entry,'output'))throw new Error('Unknown, repeated, or malformed case response.');seen.add(entry.caseId);}
-  return r as unknown as Responses;
+  for(const entry of r.responses){if(!entry||typeof entry!=='object'||typeof entry.caseId!=='string'||!known.has(entry.caseId)||seen.has(entry.caseId)||!Object.prototype.hasOwnProperty.call(entry,'output'))throw new Error('Unknown, repeated, or malformed case response.');seen.add(entry.caseId);validateOutput(entry.output);}
+  return{format:'locale-crash/responses/1',label:r.label,responses:r.responses.map(entry=>({caseId:entry.caseId,output:entry.output}))};
 }
 export function runBuiltin(policy:'reference'|'naive',fixtures:Case[]=cases):Report{return score({format:'locale-crash/responses/1',label:policy==='reference'?'Locale-aware reference parser':'Deliberately naive parser',responses:fixtures.map(f=>{try{return{caseId:f.id,output:policy==='reference'?reference(f):naive(f)};}catch(error){return{caseId:f.id,output:{error:error instanceof Error?error.message:'Reference parse failed.'}};}})},fixtures);}
 export function csv(report:Report):string{
-  const cell=(value:unknown)=>`"${String(value).replaceAll('"','""')}"`;
+  const cell=(value:unknown)=>{const text=String(value);return`"${(/^[\u0000-\u0020]*[=+@-]/.test(text)?"'"+text:text).replaceAll('"','""')}"`;};
   return[['caseId','pair','category','locale','status','expected','actual','differences'],...report.results.map(r=>[r.caseId,r.pair,r.category,r.locale,r.status,JSON.stringify(r.expected),JSON.stringify(r.actual),r.differences.join(' ')])].map(row=>row.map(cell).join(',')).join('\r\n');
 }
 export function validateCustom(input:{category:string;locale:string;input:string;expected:string;operation:string},id:string):Case{
   if(!categories.includes(input.category as Case['category'])||!['en-US','tr-TR'].includes(input.locale)||!input.input.trim()||input.input.length>5000)throw new Error('Select a category and locale, and enter input up to 5,000 characters.');
+  if(input.expected.length>100000)throw new Error('Expected JSON exceeds 100,000 characters.');
   const expected:unknown=JSON.parse(input.expected);
-  if(!expected||typeof expected!=='object'||Array.isArray(expected)||Object.keys(expected).length<1||Object.keys(expected).length>20||Object.entries(expected).some(([key,value])=>key.length>100||!['string','number','boolean'].includes(typeof value)))throw new Error('Expected output must be an object with 1–20 scalar fields.');
+  validateOutput(expected);
+  if(!expected||typeof expected!=='object'||Array.isArray(expected)||Object.keys(expected).length<1||Object.keys(expected).length>20||Object.entries(expected).some(([key,value])=>key.length>100||!['string','number','boolean'].includes(typeof value)||typeof value==='string'&&value.length>5000))throw new Error('Expected output must be an object with 1–20 finite scalar fields; strings are limited to 5,000 characters.');
   if(input.category==='casing'&&!['upper','lower'].includes(input.operation))throw new Error('Choose an upper or lower operation.');
   return{id,pair:id,category:input.category as Case['category'],locale:input.locale as Locale,input:input.input,expected:expected as Output,operation:input.operation as 'upper'|'lower',prompt:`Locale: ${input.locale}. Category: ${input.category}. Input: ${input.input}. Return only JSON matching these required field names and types: ${Object.entries(expected).map(([k,v])=>`${k}: ${typeof v}`).join(', ')}.`,note:'Custom case; the expected output is supplied by you.'};
 }

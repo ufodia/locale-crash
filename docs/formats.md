@@ -27,7 +27,7 @@ Expected values are omitted. `npm run fixtures -- --include-expected` instead ex
 }
 ```
 
-`label` must contain 1–200 characters. `responses` can contain up to 10,000 entries, but every ID must be known and unique. Each entry needs an `output` property. A response may contain any JSON value; a value that is not the expected object fails rather than being rejected at file-import time.
+`label` must contain 1–200 characters. `responses` can contain up to 10,000 entries, but every ID must be known and unique. Each entry needs an `output` property. A response may contain any bounded JSON value; a value that is not the expected object fails rather than being rejected at file-import time. Numbers must be finite. Each output is limited to 20,000 JSON values and 32 nesting levels so comparison, display, and export remain safe. These limits also apply to the manual response editor.
 
 The browser limits files to 2,000,000 bytes. The parser also limits the serialized text to 2,000,000 JavaScript characters. Empty response lists are valid and score every case as missing. Unknown top-level fields are ignored.
 
@@ -41,8 +41,8 @@ A report contains `label`, `total`, `passed`, `failed`, `missing`, `pairFailures
 - Required values and types must match exactly. Extra keys fail.
 - `pairFailures` counts distinct pair IDs with at least one failed case. Missing-only pairs are not counted as failed pairs.
 
-CSV reports use CRLF rows and quoted fields; embedded quotes are escaped. Expected and actual objects are serialized as JSON in their respective cells. Reports are exports, not response-file imports.
+CSV reports use CRLF rows and quoted fields; embedded quotes are escaped. Cells beginning with a spreadsheet formula character (optionally after control characters or spaces) receive a leading apostrophe. Expected and actual objects are serialized as JSON in their respective cells. Reports are exports, not response-file imports.
 
 ## Custom cases
 
-The UI accepts category, locale, raw input (1–5,000 characters), expected JSON, and a casing operation. Expected output must be an object with 1–20 scalar string/number/boolean values; arrays, nulls, and nested objects are not accepted for custom expected outputs. Custom IDs are generated for the current session and must be recreated before importing their responses.
+The UI accepts category, locale, raw input (1–5,000 characters), expected JSON, and a casing operation. Expected JSON is limited to 100,000 characters and must be an object with 1–20 scalar string/finite-number/boolean values. Each string is limited to 5,000 characters; arrays, nulls, and nested objects are not accepted for custom expected outputs. Custom IDs are generated for the current session and must be recreated before importing their responses.
