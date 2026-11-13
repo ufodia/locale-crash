@@ -4,6 +4,9 @@
 <p align="center"><a href="LICENSE">MIT · Ufodia</a> &nbsp; / &nbsp; 36 pairs · 72 cases &nbsp; / &nbsp; Local scoring &nbsp; / &nbsp; No API key</p>
 <p align="center"><a href="https://buymeacoffee.com/ufodia"><img src="docs/assets/coffee.svg" alt="Buy Ufodia a coffee" width="190" height="46"></a></p>
 
+
+**[Open the live app ↗](https://locale-crash.vercel.app/)** · [Deployment guide](docs/DEPLOYMENT.md)
+
 ## One small change. A different result.
 
 `1,234.50` and `1.234,50` can mean the same amount. `I` lowercases to `i` in English and `ı` in Turkish. A Turkish negative command can hide its negation inside the verb.
