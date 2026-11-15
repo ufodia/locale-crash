@@ -111,6 +111,8 @@ The test suite checks every built-in expected result, invalid dates and numbers,
 
 If LocaleCrash helped you catch a locale bug, [buy Ufodia a coffee](https://buymeacoffee.com/ufodia). Support helps maintain fixtures, examples, and adapters. A small reproducible case or corrected explanation is also a valuable contribution.
 
+You can also [sponsor ufodia on GitHub](https://github.com/sponsors/ufodia).
+
 Licensed under the [MIT License](LICENSE). Copyright © 2026 **Ufodia**.
 
 ## Browser checks
