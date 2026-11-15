@@ -28,7 +28,7 @@ export function parseCommand(input:string,locale:Locale):Output {
   if(locale==='en-US'){
     for(const [action] of verbs){if(new RegExp(`^Do not ${action} the [A-Za-z ]+$`,'i').test(text))return{action,allowed:false};if(new RegExp(`^${action} the [A-Za-z ]+$`,'i').test(text))return{action,allowed:true};}
   }else{
-    for(const [action,positive,negative]of verbs){if(text.endsWith(` ${negative}`))return{action,allowed:false};if(text.endsWith(` ${positive}`))return{action,allowed:true};}
+    for(const [action,positive,negative]of verbs){if(text.endsWith(` ${negative}`)||text.endsWith(` ${negative}${negative.endsWith('ma')?'yın':'yin'}`))return{action,allowed:false};if(text.endsWith(` ${positive}`))return{action,allowed:true};}
   }
   throw new Error('Command is outside the reference parser’s documented grammar.');
 }

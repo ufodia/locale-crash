@@ -51,14 +51,14 @@ for (const [index, [input,operation,en,tr,note]] of casing.entries()) pair('casi
   { input, operation, expected:{ text:en }, note, prompt:`Locale: en-US. Convert "${input}" to ${operation}case exactly as written. Return only JSON with a text field.` },
   { input, operation, expected:{ text:tr }, note, prompt:`Yerel biçim: tr-TR. "${input}" metnini ${operation==='upper'?'büyük':'küçük'} harfe dönüştür. Yazımı düzeltme. Yalnızca text alanı içeren JSON döndür.` });
 const commands: [string,string,string,boolean][] = [
-  ['Do not send the invoice.','Faturayı gönderme.','send',false],
+  ['Do not send the invoice.','Faturayı göndermeyin.','send',false],
   ['Send the invoice.','Faturayı gönder.','send',true],
-  ['Do not delete the file.','Dosyayı silme.','delete',false],
+  ['Do not delete the file.','Dosyayı silmeyin.','delete',false],
   ['Delete the file.','Dosyayı sil.','delete',true],
-  ['Do not publish the report.','Raporu yayımlama.','publish',false],
-  ['Do not share the link.','Bağlantıyı paylaşma.','share',false],
-  ['Do not upload the photo.','Fotoğrafı yükleme.','upload',false],
-  ['Do not cancel the booking.','Rezervasyonu iptal etme.','cancel',false],
+  ['Do not publish the report.','Raporu yayımlamayın.','publish',false],
+  ['Do not share the link.','Bağlantıyı paylaşmayın.','share',false],
+  ['Do not upload the photo.','Fotoğrafı yüklemeyin.','upload',false],
+  ['Do not cancel the booking.','Rezervasyonu iptal etmeyin.','cancel',false],
   ['Invite the guest.','Konuğu davet et.','invite',true],
 ];
 for(const [index,[en,tr,action,allowed]] of commands.entries()) pair('negation',index,

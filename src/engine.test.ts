@@ -39,3 +39,5 @@ describe('external scoring',()=>{
     expect(csv(report)).toContain('"\'=1+1"');
   });
 });
+
+it('accepts unambiguous polite Turkish negative imperatives',()=>{expect(parseCommand('Faturayı göndermeyin.','tr-TR')).toEqual({action:'send',allowed:false});expect(parseCommand('Dosyayı silmeyin.','tr-TR')).toEqual({action:'delete',allowed:false});expect(parseCommand('Raporu yayımlamayın.','tr-TR')).toEqual({action:'publish',allowed:false});});
