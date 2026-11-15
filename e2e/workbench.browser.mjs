@@ -49,3 +49,18 @@ test('a delayed import cannot replace a newer reference run and unsafe JSON is r
   await expect(page.locator('#passed')).toHaveText('72');
   expect(errors).toEqual([]);
 });
+
+
+test('category state and case dialog remain usable with keyboard and forced colors',async({page})=>{
+  await page.emulateMedia({forcedColors:'active',reducedMotion:'reduce'});
+  await page.goto('/');
+  const category=page.locator('.category[data-category="dates"]');
+  await category.focus();await page.keyboard.press('Enter');
+  await expect(category).toHaveAttribute('aria-pressed','true');
+  const first=page.locator('.case').first(),id=await first.getAttribute('data-case-id');
+  await first.focus();await page.keyboard.press('Enter');
+  await expect(page.getByRole('dialog',{name:id,exact:true})).toBeVisible();
+  await page.locator('#answer').focus();await page.keyboard.press('Control+A');await page.keyboard.type('{}');await page.locator('#check-answer').focus();await page.keyboard.press('Enter');
+  await page.keyboard.press('Escape');
+  await expect(page.locator(`.case[data-case-id="${id}"]`)).toBeFocused();
+});
